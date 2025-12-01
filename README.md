@@ -9,8 +9,6 @@ Laravel package for extracting Text/Html from a PDF or converting it to images (
 
 ## Support us
 
-[<img src="https://unknow.sk/logo.svg" width="288px" style="background-color:#0d1116;" />](https://opencollective.com/unknow-sk)
-
 We invest a lot of time and give our hearts to work in [Open Source](https://hubio.sk).
 
 ## Installation
