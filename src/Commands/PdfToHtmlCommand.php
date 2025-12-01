@@ -31,7 +31,7 @@ class PdfToHtmlCommand extends Command
             $this->info("Output Name: $outputName");
 
             if (! empty($outputName) && empty($outputDir)) {
-                $outputDir = rtrim(config('pdf-to.output_dir'), '/').'/';
+                $outputDir = rtrim(config('pdf-to.output_dir', ''), '/').'/';
             }
 
             $result = LaravelPdfTo::setConfig([

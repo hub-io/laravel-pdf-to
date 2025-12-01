@@ -155,7 +155,7 @@ class LaravelPdfTo
             ->setTimeout($this->timeout)
             ->setPdf($this->pdfFile);
 
-        $outputDir = rtrim($this->config->get('output_dir'), DIRECTORY_SEPARATOR);
+        $outputDir = rtrim($this->config->get('output_dir', ''), DIRECTORY_SEPARATOR);
 
         if (! file_exists($outputDir) && ! mkdir($outputDir, 0755, true) && ! is_dir($outputDir)) {
             throw new RuntimeException(sprintf('Directory "%s" was not created', $outputDir));
@@ -164,7 +164,7 @@ class LaravelPdfTo
             throw new RuntimeException(sprintf('Directory "%s" is not writable', $outputDir));
         }
 
-        $extension = strtolower(trim($extension, '.'));
+        $extension = strtolower(trim(($extension ?: ''), '.'));
         $resultFile = $outputDir.DIRECTORY_SEPARATOR.(
             $this->outputFile ?: basename($this->pdfFile, '.pdf')
         );

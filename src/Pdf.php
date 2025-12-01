@@ -101,7 +101,7 @@ class Pdf extends \Spatie\PdfToText\Pdf
     ]): string
     {
         foreach ($commonPaths as $path) {
-            $path = rtrim($path, '/').'/'.$executable;
+            $path = rtrim(($path ?: ''), '/').'/'.$executable;
             if (is_executable($path)) {
                 return $path;
             }
