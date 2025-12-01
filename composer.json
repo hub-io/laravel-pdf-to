@@ -3,7 +3,7 @@
     "description": "Laravel package for converting pdf to text, html or image",
     "license": "MIT",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "keywords": [
         "Hubio s.r.o.",
         "laravel",

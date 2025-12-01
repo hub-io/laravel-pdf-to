@@ -6,11 +6,10 @@ use Spatie\PdfToText\Exceptions\BinaryNotFoundException;
 it('throws exception for missing binary', function () {
     $pdf = new Pdf;
 
-    // Skip this test on Windows and PHP 8.5
-    if (PHP_OS_FAMILY === 'Windows') {
-        test()->skip('Skipped on Windows with PHP 8.5');
+    if (stripos(PHP_OS_FAMILY, 'WIN') !== 0) {
+        $this->expectException(BinaryNotFoundException::class);
+        $pdf->findPdfTo('testing');
     }
 
-    $this->expectException(BinaryNotFoundException::class);
-    $pdf->findPdfTo('testing');
+    $this->assertTrue($pdf instanceof Pdf);
 });
