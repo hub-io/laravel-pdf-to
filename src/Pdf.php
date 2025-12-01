@@ -301,18 +301,21 @@ class Pdf extends \Spatie\PdfToText\Pdf
     public function setOptions(array $options): static
     {
         $this->options = $options;
+
         return $this;
     }
 
     public function setTimeout($timeout): static
     {
         $this->timeout = $timeout;
+
         return $this;
     }
 
     public function setPdf(string $pdf): static
     {
         $this->pdf = $pdf;
+
         return $this;
     }
 }
